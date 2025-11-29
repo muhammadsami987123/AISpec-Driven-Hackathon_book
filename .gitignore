@@ -1,0 +1,31 @@
+# General
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+*.log
+.env*
+
+# Node.js/JavaScript/TypeScript
+node_modules/
+dist/
+build/
+*.log
+.env*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+
+# Additional Node/Docusaurus patterns
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+coverage/
+.cache/
