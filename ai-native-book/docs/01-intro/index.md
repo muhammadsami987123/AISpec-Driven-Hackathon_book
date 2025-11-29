@@ -44,3 +44,59 @@ The loop operates continuously and must be resilient to uncertainty: perception 
 In later sections we will provide concrete examples, diagrams, and code snippets that illustrate each stage of the loop and how they are integrated in a production-ready pipeline for humanoid and other physical AI systems.
 
 <!-- Mermaid diagrams and code examples (to be added in subsequent phases) -->
+
+### Diagrams
+
+#### Perception–Decision–Action Loop
+
+```mermaid
+flowchart LR
+  P[Perception]
+  D[Decision]
+  A[Action]
+  P --> D
+  D --> A
+  A --> P
+```
+
+#### Historical Timeline
+
+```mermaid
+timeline
+  1990 : Rodney Brooks - Subsumption architecture
+  2000 : Rise of industrial manipulators and automation
+  2010 : Deep learning boosts perception
+  2025 : Modern humanoid announcements and sim-to-real advances
+```
+
+### Code Example
+
+```python
+# Simple pseudocode showing Perception -> Decision -> Action loop
+import time
+
+def perceive():
+	# return sensor observations (placeholder)
+	return {"objects": [], "pose": None}
+
+def decide(observation):
+	# simple policy: if object detected, plan a reach; otherwise idle
+	if observation["objects"]:
+		return {"type": "reach", "target": observation["objects"][0]}
+	return {"type": "idle"}
+
+def act(command):
+	# translate high-level command into motor commands
+	print(f"Executing: {command}")
+
+def main_loop():
+	while True:
+		obs = perceive()
+		cmd = decide(obs)
+		act(cmd)
+		time.sleep(0.1)
+
+if __name__ == "__main__":
+	main_loop()
+```
+

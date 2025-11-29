@@ -93,7 +93,7 @@ description: "Tasks for Chapter 1 Content Generation"
 
 ### Implementation for User Story 5
 
-- [ ] T010 [US5] Verify all generated content is saved to `docs/01-intro/`
+ - [X] T010 [US5] Verify all generated content is saved to `docs/01-intro/`
 
 ---
 
