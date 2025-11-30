@@ -1,0 +1,98 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.loginSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0; /* Increased padding for balanced white space */
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px; /* Ensure sufficient height for centering and content */
+}
+
+.loginForm {
+  background-color: var(--ifm-background-color); /* Use theme background for consistency */
+  padding: 3rem; /* Increased padding */
+  border-radius: 1.5rem; /* Larger rounded corners (2xl) */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Smooth transition for any changes */
+}
+
+.loginForm h2 {
+  margin-bottom: 2rem; /* Adjusted margin for better spacing */
+  color: var(--ifm-heading-color);
+  font-size: 2rem; /* Slightly larger heading */
+}
+
+.formGroup {
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.75rem; /* Adjusted margin */
+  font-weight: 600; /* Slightly bolder label */
+  color: var(--ifm-font-color-base);
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.85rem; /* Slightly more padding */
+  border: 1px solid var(--ifm-color-gray-200); /* Softer border color */
+  border-radius: 0.75rem; /* Rounded input fields */
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out; /* Smooth transition for focus */
+}
+
+.formGroup input:focus {
+  border-color: var(--ifm-color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.25); /* Refined focus shadow */
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+  margin-top: 2rem; /* Adjusted margin */
+  border-radius: 0.75rem; /* Match input field roundedness */
+  font-weight: 600;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+  box-shadow: 0 5px 15px rgba(var(--ifm-color-primary-rgb), 0.2); /* Subtle button shadow */
+}
+
+.button--block:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(var(--ifm-color-primary-rgb), 0.3); /* More pronounced shadow on hover */
+}
+
+.signupLink {
+  margin-top: 1.5rem; /* Adjusted margin */
+  font-size: 0.95rem; /* Slightly larger font */
+  color: var(--ifm-font-color-base);
+}
+
+.signupLink a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 600; /* Make link text bolder */
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
