@@ -75,6 +75,11 @@ const config: Config = {
           label: 'Book',
         },
         {
+          label: 'Chat',
+          to: '/chat',
+          position: 'right',
+        },
+        {
           label: 'Sign In',
           to: '/login',
           position: 'right',

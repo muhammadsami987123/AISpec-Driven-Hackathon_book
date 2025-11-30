@@ -1,0 +1,110 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.dashboardSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+  min-height: 500px;
+}
+
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profileCard,
+.contentCard {
+  background-color: var(--ifm-background-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.profileCard:hover,
+.contentCard:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profileCard h2,
+.contentCard h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+  font-size: 1.5rem;
+}
+
+.profileInfo {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ifm-color-primary);
+}
+
+.userDetails {
+  flex: 1;
+}
+
+.userDetails p {
+  margin: 0.75rem 0;
+  color: var(--ifm-font-color-base);
+  line-height: 1.6;
+}
+
+.userDetails strong {
+  color: var(--ifm-heading-color);
+  margin-right: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actions .button {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions .button:hover {
+  transform: translateY(-2px);
+}
+
+.error {
+  color: #c33;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: #fee;
+  border-radius: 0.75rem;
+  border: 1px solid #fcc;
+}

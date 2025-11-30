@@ -1,0 +1,32 @@
+/* Navbar container styling */
+#user-nav-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: auto;
+  padding-right: 0.5rem;
+}
+
+/* Ensure navbar items are properly spaced */
+.navbar__items {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.navbar__items--right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* Hide sign in button if user is logged in */
+.navbar__items--right > a[href="/login"] {
+  display: none;
+}
+
+/* Show it only when user is NOT logged in */
+:not(.user-logged-in) .navbar__items--right > a[href="/login"] {
+  display: inline-block;
+}

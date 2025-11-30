@@ -1,0 +1,188 @@
+.profileSection {
+  padding: 3rem 0;
+  min-height: 80vh;
+}
+
+.heroBanner {
+  margin-bottom: 3rem;
+}
+
+.profileContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profileCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--ifm-color-primary);
+}
+
+.avatarLarge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.profileBasic {
+  flex: 1;
+}
+
+.profileBasic h2 {
+  margin: 0;
+  color: var(--ifm-font-color-base);
+  font-size: 1.5rem;
+}
+
+.email {
+  margin: 0.5rem 0 0 0;
+  color: var(--ifm-color-gray-600);
+  font-size: 0.95rem;
+}
+
+.joinDate {
+  margin: 0.25rem 0 0 0;
+  color: var(--ifm-color-gray-500);
+  font-size: 0.85rem;
+}
+
+.profileDetails {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup:last-child {
+  margin-bottom: 0;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.formGroup input:disabled {
+  background-color: var(--ifm-color-emphasis-50);
+  cursor: not-allowed;
+  color: var(--ifm-color-gray-600);
+}
+
+.staticField {
+  margin: 0;
+  padding: 0.75rem;
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-color-emphasis-50);
+  border-radius: 6px;
+}
+
+.formGroup small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ifm-color-gray-600);
+  font-size: 0.8rem;
+}
+
+.error {
+  padding: 1rem;
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  border-radius: 6px;
+  color: #c62828;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  flex-wrap: wrap;
+}
+
+.actions button,
+.actions a {
+  min-width: 140px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profileCard {
+    padding: 1.5rem;
+  }
+
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profileImage,
+  .avatarLarge {
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
+  }
+
+  .profileBasic h2 {
+    font-size: 1.25rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .actions button,
+  .actions a {
+    width: 100%;
+    min-width: unset;
+  }
+}
