@@ -62,31 +62,18 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics',
+      title: 'Batta',
       logo: {
-        alt: 'AI Native Book Logo',
+        alt: 'Batta Logo',
         src: 'img/logo.svg',
+        width: 40,
+        height: 40,
       },
+      hideOnScroll: false,
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'mainSidebar',
-          position: 'left',
-          label: 'Book',
-        },
-        {
-          label: 'Chat',
-          to: '/chat',
-          position: 'right',
-        },
         {
           label: 'Sign In',
           to: '/login',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/MaryamCoader/calculater',
-          label: 'GitHub',
           position: 'right',
         },
       ],
