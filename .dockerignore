@@ -1,0 +1,24 @@
+# General Docker ignore patterns
+.git/
+.dockerignore
+Dockerfile*
+*.log*
+.env*
+coverage/
+
+# Node.js (if any frontend/tooling is present, e.g., Docusaurus)
+node_modules/
+dist/
+build/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.cache/
+
+# Python specific
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/

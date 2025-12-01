@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+coverage/
+*.min.js
+
+# Generated or transient content
+.cache/
+.turbo/
+
+# Docs and specs that shouldn't be linted
+specs/
+history/
+
+

@@ -1,30 +1,28 @@
 <!--
 Sync Impact Report:
-Version change: 0.0.0 (template) → 1.0.0 (initial full version)
+Version change: 1.0.0 → 1.0.1
 List of modified principles:
-  - N/A (new full constitution)
+  - N/A (minor internal update)
 Added sections:
-  - I. Foundational Principles
-  - II. Learning Objectives & Competencies
-  - III. Hardware Access & Lab Governance
+  - N/A
 Removed sections:
   - N/A
 Templates requiring updates:
-  - .specify/templates/plan-template.md: ⚠ pending
-  - .specify/templates/spec-template.md: ⚠ pending
-  - .specify/templates/tasks-template.md: ⚠ pending
-  - .specify/templates/commands/sp.constitution.md: ⚠ pending
-  - .specify/templates/commands/sp.phr.md: ⚠ pending
-  - .specify/templates/commands/sp.analyze.md: ⚠ pending
-  - .specify/templates/commands/sp.adr.md: ⚠ pending
-  - .specify/templates/commands/sp.clarify.md: ⚠ pending
-  - .specify/templates/commands/sp.checklist.md: ⚠ pending
-  - .specify/templates/commands/sp.git.commit_pr.md: ⚠ pending
-  - .specify/templates/commands/sp.implement.md: ⚠ pending
-  - .specify/templates/commands/sp.plan.md: ⚠ pending
-  - .specify/templates/commands/sp.specify.md: ⚠ pending
-  - .specify/templates/commands/sp.tasks.md: ⚠ pending
-Follow-up TODOs: None
+  - .specify/templates/plan-template.md: ✅ updated
+  - .specify/templates/spec-template.md: ✅ updated
+  - .specify/templates/tasks-template.md: ✅ updated
+  - .specify/templates/commands/sp.constitution.md: ❌ Does not exist
+  - .specify/templates/commands/sp.phr.md: ❌ Does not exist
+  - .specify/templates/commands/sp.analyze.md: ❌ Does not exist
+  - .specify/templates/commands/sp.adr.md: ❌ Does not exist
+  - .specify/templates/commands/sp.clarify.md: ❌ Does not exist
+  - .specify/templates/commands/sp.checklist.md: ❌ Does not exist
+  - .specify/templates/commands/sp.git.commit_pr.md: ❌ Does not exist
+  - .specify/templates/commands/sp.implement.md: ❌ Does not exist
+  - .specify/templates/commands/sp.plan.md: ❌ Does not exist
+  - .specify/templates/commands/sp.specify.md: ❌ Does not exist
+  - .specify/templates/commands/sp.tasks.md: ❌ Does not exist
+Follow-up TODOs: Ensure missing command files are addressed if they are expected to exist.
 -->
 # Physical AI & Humanoid Robotics
 ## Program Constitution
@@ -96,4 +94,4 @@ Students working with lab hardware agree to:
 ## Governance
 This constitution supersedes all other program practices. Amendments require a formal proposal, review by faculty and student representatives, and documented approval. Versioning follows semantic rules (MAJOR.MINOR.PATCH). Compliance will be reviewed bi-annually.
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-29
+**Version**: 1.0.1 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-12-01
