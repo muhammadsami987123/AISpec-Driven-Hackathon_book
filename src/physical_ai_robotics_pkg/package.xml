@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>physical_ai_robotics_pkg</name>
+  <version>0.1.0</version>
+  <description>Core ROS 2 package for the Physical AI &amp; Humanoid Robotics course humanoid robot.</description>
+
+  <maintainer email="maintainer@example.com">Physical AI Course</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav2_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>trajectory_msgs</depend>
+
+  <!-- Custom messages for this package -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
+
