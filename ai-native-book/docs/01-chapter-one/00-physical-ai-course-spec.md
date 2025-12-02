@@ -1,7 +1,7 @@
 ---
 id: physical-ai-course-spec
-title: Physical AI & Humanoid Robotics — Course Specification
-sidebar_label: Course Specification
+title: "Physical AI & Humanoid Robotics — Course Specification"
+sidebar_label: "Course Specification"
 ---
 
 # Physical AI & Humanoid Robotics: Course Specification

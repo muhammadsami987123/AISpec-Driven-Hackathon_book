@@ -1,7 +1,7 @@
 ---
 id: 02-chapter-two
-title: The Robotic Nervous System: ROS 2 Fundamentals
-sidebar_label: Chapter 2
+title: "The Robotic Nervous System: ROS 2 Fundamentals"
+sidebar_label: "ROS 2 Fundamentals"
 ---
 
 <!-- Generated for Chapter 2: ROS 2 Fundamentals -->

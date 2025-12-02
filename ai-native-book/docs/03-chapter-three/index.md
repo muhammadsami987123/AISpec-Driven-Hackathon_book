@@ -1,7 +1,7 @@
 ---
 id: 03-chapter-three
 title: "Chapter Three: Advanced Topics in Robotics"
-sidebar_label: "Chapter Three"
+sidebar_label: "Advanced Topics in Robotics"
 ---
 
 ## 3.1 Advanced Robot Learning

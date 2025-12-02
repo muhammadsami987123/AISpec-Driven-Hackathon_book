@@ -34,7 +34,7 @@ const chapters: ChapterMeta[] = [
     title: 'Foundations of Physical AI & Course Spec',
     description:
       'Define Physical AI, embodied intelligence, and the full capstone roadmap from sensors to humanoid deployment.',
-    link: '/docs/01-chapter-one/',
+    link: '/docs/01-intro/',
     // Use existing static illustrations for chapter icons
     icon: '/img/undraw_docusaurus_tree.svg',
     tags: ['Foundations', 'Robotics Stack', 'Ethics & Governance'],
@@ -126,7 +126,7 @@ function HomepageHero() {
               <span className="heroBadge">Humanoid Control</span>
             </div>
             <div className="buttons">
-              <Link className="button button--secondary button--lg" to="/docs/introduction/">
+              <Link className="button button--secondary button--lg" to="/docs/01-intro/">
                 Continue Book
               </Link>
               <Link className="button button--info button--lg" to="#book-journey">

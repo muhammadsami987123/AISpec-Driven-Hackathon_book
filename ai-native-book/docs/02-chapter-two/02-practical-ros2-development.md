@@ -1,7 +1,7 @@
 ---
 id: practical-ros2-development
-title: Practical ROS 2 Development
-sidebar_label: Module 2: ROS 2 Development Tools
+title: "Practical ROS 2 Development"
+sidebar_label: "Module 2: ROS 2 Development Tools"
 ---
 
 Module 2 focuses on practical development skills you'll use daily: launch files, message definitions, debugging tools, URDF modeling, and visualization. These tools enable you to build, test, and debug complex multi-node systems.

@@ -1,7 +1,7 @@
 ---
 id: ros2-architecture-core-concepts
-title: ROS 2 Architecture & Core Concepts
-sidebar_label: Module 1: ROS 2 Fundamentals
+title: "ROS 2 Architecture & Core Concepts"
+sidebar_label: "Module 1: ROS 2 Fundamentals"
 ---
 
 Module 1 introduces the fundamental building blocks of ROS 2. You'll learn why distributed architectures matter in robotics, how ROS 2 solves the middleware problem, and how to build your first multi-node systems.

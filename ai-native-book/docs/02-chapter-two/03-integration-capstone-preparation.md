@@ -1,7 +1,7 @@
 ---
 id: integration-capstone-preparation
-title: Integration & Capstone Preparation
-sidebar_label: Module 3: Integration & Capstone
+title: "Integration & Capstone Preparation"
+sidebar_label: "Module 3: Integration & Capstone"
 ---
 
 Module 3 brings together all the concepts from Modules 1 and 2. You'll learn how to design complete humanoid control architectures, integrate sensor drivers and motor controllers, and prepare for the capstone project. This module culminates in a comprehensive integration challenge that tests your ability to build production-ready ROS 2 systems.

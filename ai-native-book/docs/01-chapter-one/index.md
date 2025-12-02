@@ -1,7 +1,7 @@
 ---
 id: 01-chapter-one
-title: Chapter 1: Foundations of Physical AI
-sidebar_label: Chapter 1
+title: "Chapter 1: Foundations of Physical AI"
+sidebar_label: "Foundations of Physical AI"
 ---
 
 <!-- Generated for Chapter 1: Foundations of Physical AI -->
