@@ -7,7 +7,7 @@ sidebar_label: Chapter 2
 <!-- Generated for Chapter 2: ROS 2 Fundamentals -->
 
 For the full course overview and capstone description, see the
-[Physical AI & Humanoid Robotics — Course Specification](../01-intro/00-physical-ai-course-spec.md).
+[Physical AI & Humanoid Robotics — Course Specification](../01-chapter-one/00-physical-ai-course-spec.md).
 
 ## Chapter Overview
 
