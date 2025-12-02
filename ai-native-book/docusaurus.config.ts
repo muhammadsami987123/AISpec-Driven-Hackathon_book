@@ -1,11 +1,11 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics',
+  title: 'The AI-Native Guide to Physical AI & Humanoid Robotics',
   tagline: 'Leveraging AI for next-generation development',
   favicon: 'img/favicon.ico',
 
@@ -46,8 +46,12 @@ const config: Config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,
-        
+        blog: {
+          showReadingTime: true,
+          path: 'blog',
+          routeBasePath: '/blog',
+        },
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -62,18 +66,34 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Batta',
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'Batta Logo',
-        src: 'img/logo.svg',
-        width: 40,
-        height: 40,
+        alt: 'Site Logo',
+        src: 'img/batta-logo.svg',
+        width: 32,
+        height: 32,
       },
       hideOnScroll: false,
       items: [
         {
+          label: 'Book',
+          to: '/docs/01-intro/',
+          position: 'left',
+          className: 'navbar-book',
+        },
+        {
+          label: 'Blog',
+          to: '/blog',
+          position: 'left',
+        },
+        {
           label: 'Sign In',
           to: '/login',
+          position: 'right',
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/MaryamCoader/calculater',
           position: 'right',
         },
       ],

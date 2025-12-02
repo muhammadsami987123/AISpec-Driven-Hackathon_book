@@ -18,25 +18,25 @@ export default function ChapterOverview() {
       id: 'chapter1',
       title: 'Introduction to Physical AI',
       description: 'Explore the foundational concepts of Physical AI, embodied intelligence, and the perception-decision-action loop that powers modern humanoid systems.',
-      link: '/docs/intro/introduction-physical-ai',
+      link: '/docs/01-intro/',
     },
     {
       id: 'chapter2',
       title: 'Building and Deploying Humanoid Robots',
       description: 'Master advanced robot architectures, hardware integration, control systems, and the practical challenges of deploying humanoids in real-world environments.',
-      link: '/docs/chapter-two/',
+      link: '/docs/02-chapter-two',
     },
     {
       id: 'chapter3',
       title: 'Perception and Sensor Fusion',
       description: 'Dive into computer vision, lidar processing, and multi-sensor fusion techniques that enable robots to understand and interact with their surroundings.',
-      link: '/docs/chapter-three/',
+      link: '/docs/03-chapter-three',
     },
     {
       id: 'chapter4',
       title: 'Learning and Adaptation',
       description: 'Learn reinforcement learning, imitation learning, and sim-to-real transfer methods that allow robots to acquire new skills and improve over time.',
-      link: '/docs/chapter-four/',
+      link: '/docs/04-chapter-four',
     },
   ];
 

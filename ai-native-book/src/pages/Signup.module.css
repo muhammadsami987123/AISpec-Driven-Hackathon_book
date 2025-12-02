@@ -88,6 +88,56 @@
   text-align: left;
 }
 
+.passwordInputRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.togglePassword {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--ifm-color-gray-200);
+  border-radius: 0.75rem;
+  background: var(--ifm-color-gray-100);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.togglePassword:hover {
+  background: var(--ifm-color-gray-200);
+}
+
+.passwordStrength {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.strengthBar {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    #f66 0%,
+    #f90 25%,
+    #fc3 50%,
+    #9c3 75%,
+    #3c3 100%
+  );
+  filter: grayscale(0.35);
+}
+
+.strengthBar[data-score="0"] { filter: grayscale(0.85); }
+.strengthBar[data-score="1"] { filter: grayscale(0.7); }
+.strengthBar[data-score="2"] { filter: grayscale(0.45); }
+.strengthBar[data-score="3"] { filter: grayscale(0.2); }
+.strengthBar[data-score="4"] { filter: grayscale(0); }
+
+.strengthLabel {
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-secondary);
+}
+
 .button--block {
   display: block;
   width: 100%;

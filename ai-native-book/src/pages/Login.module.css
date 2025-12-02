@@ -102,6 +102,53 @@
   cursor: not-allowed;
 }
 
+.fieldError {
+  display: block;
+  color: #c33;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.passwordField {}
+
+.passwordInputRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.togglePassword {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--ifm-color-gray-200);
+  border-radius: 0.75rem;
+  background: var(--ifm-color-gray-100);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.togglePassword:hover {
+  background: var(--ifm-color-gray-200);
+}
+
+.helperRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.forgotLink {
+  font-size: 0.95rem;
+}
+
 .divider {
   margin: 1.5rem 0;
   text-align: center;

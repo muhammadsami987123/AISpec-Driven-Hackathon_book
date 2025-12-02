@@ -1,5 +1,6 @@
 ---
 id: introduction-physical-ai
+slug: /01-intro/
 title: Introduction to Physical AI
 sidebar_label: Introduction
 ---

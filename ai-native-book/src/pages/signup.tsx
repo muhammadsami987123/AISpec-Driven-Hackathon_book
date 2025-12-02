@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -24,6 +24,20 @@ function SignupPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const passwordStrength = useMemo(() => {
+    const p = formData.password || '';
+    let score = 0;
+    if (p.length >= 8) score++;
+    if (/[A-Z]/.test(p)) score++;
+    if (/[a-z]/.test(p)) score++;
+    if (/[0-9]/.test(p)) score++;
+    if (/[^A-Za-z0-9]/.test(p)) score++;
+    const labels = ['Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+    return { score, label: labels[Math.max(0, score - 1)] };
+  }, [formData.password]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -193,28 +207,52 @@ function SignupPage() {
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Create a password (min 8 chars, 1 uppercase, 1 number)"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                  />
+                  <div className={styles.passwordInputRow}>
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      id="password"
+                      name="password"
+                      placeholder="Create a password (min 8 chars, 1 uppercase, 1 number)"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className={styles.togglePassword}
+                      onClick={() => setShowPassword((s) => !s)}
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
+                  <div className={styles.passwordStrength} aria-live="polite">
+                    <div className={styles.strengthBar} data-score={passwordStrength.score}></div>
+                    <span className={styles.strengthLabel}>{passwordStrength.label}</span>
+                  </div>
                   {errors.password && <span className={styles.fieldError}>{errors.password}</span>}
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="confirmPassword">Confirm Password</label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Confirm your password"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    required
-                  />
+                  <div className={styles.passwordInputRow}>
+                    <input
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      placeholder="Confirm your password"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className={styles.togglePassword}
+                      onClick={() => setShowConfirmPassword((s) => !s)}
+                      aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showConfirmPassword ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
                   {errors.confirmPassword && <span className={styles.fieldError}>{errors.confirmPassword}</span>}
                 </div>
                 <button
@@ -232,6 +270,7 @@ function SignupPage() {
                 type="button"
                 className={clsx('button button--outline button--block', styles.googleButton)}
                 onClick={handleGoogleSignUp}
+                disabled={loading}
               >
                 🔐 Sign Up with Google
               </button>
