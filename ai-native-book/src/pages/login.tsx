@@ -20,7 +20,10 @@ function LoginPage() {
     password: '',
   });
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -28,11 +31,35 @@ function LoginPage() {
       ...prev,
       [name]: value,
     }));
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = () => {
+    const errs: Record<string, string> = {};
+    if (!formData.email.trim()) {
+      errs.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errs.email = 'Enter a valid email address';
+    }
+    if (!formData.password) {
+      errs.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      errs.password = 'Password must be at least 6 characters';
+    }
+    setFieldErrors(errs);
+    return Object.keys(errs).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setFieldErrors({});
+
+    if (!validateForm()) {
+      return;
+    }
     setLoading(true);
 
     try {
@@ -53,8 +80,9 @@ function LoginPage() {
 
       // Store token and user data in localStorage for client-side use
       if (data.token) {
-        localStorage.setItem('authToken', data.token);
-        localStorage.setItem('user', JSON.stringify(data.user));
+        const storage = rememberMe ? localStorage : sessionStorage;
+        storage.setItem('authToken', data.token);
+        storage.setItem('user', JSON.stringify(data.user));
         
         // Dispatch auth change event to update navbar
         window.dispatchEvent(new Event('authChange'));
@@ -109,18 +137,45 @@ function LoginPage() {
                     onChange={handleChange}
                     required
                   />
+                  {fieldErrors.email && (
+                    <span className={styles.fieldError}>{fieldErrors.email}</span>
+                  )}
                 </div>
-                <div className={styles.formGroup}>
+                <div className={clsx(styles.formGroup, styles.passwordField)}>
                   <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                  />
+                  <div className={styles.passwordInputRow}>
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      id="password"
+                      name="password"
+                      placeholder="Enter your password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className={styles.togglePassword}
+                      onClick={() => setShowPassword((s) => !s)}
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
+                  {fieldErrors.password && (
+                    <span className={styles.fieldError}>{fieldErrors.password}</span>
+                  )}
+                </div>
+                <div className={styles.helperRow}>
+                  <label className={styles.rememberMe}>
+                    <input
+                      type="checkbox"
+                      checked={rememberMe}
+                      onChange={(e) => setRememberMe(e.target.checked)}
+                    />
+                    Remember me
+                  </label>
+                  <Link className={styles.forgotLink} to="/reset-password">Forgot password?</Link>
                 </div>
                 <button
                   type="submit"
@@ -137,6 +192,7 @@ function LoginPage() {
                 type="button"
                 className={clsx('button button--outline button--block', styles.googleButton)}
                 onClick={handleGoogleSignIn}
+                disabled={loading}
               >
                 🔐 Sign In with Google
               </button>
