@@ -77,7 +77,7 @@ const config: Config = {
       items: [
         {
           label: 'Book',
-          to: '/docs/01-intro/',
+          to: '/docs/introduction/',
           position: 'left',
           className: 'navbar-book',
         },

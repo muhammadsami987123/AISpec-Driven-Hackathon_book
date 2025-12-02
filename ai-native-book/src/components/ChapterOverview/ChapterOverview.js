@@ -16,9 +16,9 @@ export default function ChapterOverview() {
   const chapters = [
     {
       id: 'chapter1',
-      title: 'Introduction to Physical AI',
+      title: 'Foundations of Physical AI',
       description: 'Explore the foundational concepts of Physical AI, embodied intelligence, and the perception-decision-action loop that powers modern humanoid systems.',
-      link: '/docs/01-intro/',
+      link: '/docs/01-chapter-one/',
     },
     {
       id: 'chapter2',
