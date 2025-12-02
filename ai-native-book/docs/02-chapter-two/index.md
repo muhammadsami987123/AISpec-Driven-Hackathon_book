@@ -1,32 +1,174 @@
 ---
 id: 02-chapter-two
-title: Building and Deploying Humanoid Robots
-sidebar_label: Chapter Two
+title: The Robotic Nervous System: ROS 2 Fundamentals
+sidebar_label: Chapter 2
 ---
 
-## 2.1 Advanced Robot Architectures
+<!-- Generated for Chapter 2: ROS 2 Fundamentals -->
 
-The evolution of robotics has seen a shift from rudimentary, single-purpose machines to complex, multi-functional humanoid systems. This progression necessitates sophisticated architectural designs that can manage intricate sensor inputs, complex motor outputs, and real-time decision-making processes. Unlike industrial robots operating in structured environments, humanoids interact with dynamic, unpredictable human-centric spaces, demanding architectures capable of robust perception, flexible planning, and resilient execution.
+For the full course overview and capstone description, see the
+[Physical AI & Humanoid Robotics — Course Specification](../01-intro/00-physical-ai-course-spec.md).
 
-Early robot architectures often followed a purely reactive paradigm, such as Brooks' Subsumption Architecture, where behaviors were layered in a hierarchy, with higher layers subsuming or overriding lower-level, simpler behaviors. This approach excelled in rapid, reactive responses to immediate environmental stimuli but struggled with complex, long-term planning or goal-directed behaviors.
+## Chapter Overview
 
-Modern humanoid robot architectures often integrate hybrid approaches, combining deliberative (planning-based) and reactive (behavior-based) components. Deliberative components are responsible for high-level reasoning, task planning, and world modeling, often operating on slower timescales. Reactive components, conversely, handle immediate sensory processing and rapid motor control, ensuring the robot can respond quickly to unexpected events or dynamic changes in its surroundings. This synergistic integration allows humanoids to exhibit both intelligent, goal-oriented behavior and agile, adaptive physical interaction. The selection of an appropriate architecture is critical for balancing responsiveness, computational efficiency, and the ability to handle the inherent complexities of embodied intelligence.
+**Duration:** Weeks 3-5  
+**Focus:** Middleware for robot control and inter-process communication
 
-## 2.2 Perception and Sensor Fusion
+Chapter 2 introduces Robot Operating System 2 (ROS 2) as the middleware layer that connects sensors, perception algorithms, planners, and motor controllers. Students will learn ROS 2 architecture, core concepts (nodes, topics, services, actions), and practical implementation using Python (rclpy). By the end, students will design and build a multi-node ROS 2 system that simulates a humanoid robot's control pipeline.
 
-For humanoid robots to operate effectively in complex environments, a robust perception system is paramount. This system must accurately interpret sensory data to construct a comprehensive understanding of the robot's surroundings, including object recognition, environmental mapping, and human interaction cues. The challenge lies in integrating diverse sensor modalities—such as cameras, LiDAR, depth sensors, and tactile arrays—each providing unique but often complementary information.
+ROS 2 serves as the "nervous system" of your humanoid robot—the communication infrastructure that allows distributed components to work together seamlessly. Unlike monolithic robot code where everything runs in a single process, ROS 2 enables a distributed architecture where perception nodes can run on one computer, planning on another, and control on the robot itself, all communicating through standardized message interfaces.
 
-Sensor fusion techniques are employed to combine data from these heterogeneous sources, aiming to overcome the limitations of individual sensors and enhance overall perception quality. For instance, visual data from cameras can provide rich contextual information and semantic understanding, while LiDAR offers precise depth and spatial mapping. By fusing these inputs, a robot can achieve a more reliable and complete representation of its environment, reducing uncertainty and improving the accuracy of its internal world model.
+## Learning Outcomes
 
-Key aspects of perception for humanoids include visual Simultaneous Localization and Mapping (VSLAM) for real-time localization and mapping, object detection and tracking for interaction with dynamic elements, and human pose estimation for safe and natural collaboration. The development of sophisticated filtering algorithms, probabilistic models, and deep learning approaches is essential for effectively processing vast amounts of raw sensor data into actionable insights for the robot's decision-making and control systems.
+### Conceptual Understanding
 
-## 2.3 Control Systems for Humanoids
+- Understand ROS 2 architecture and why middleware is essential for robotics
+- Grasp the difference between topics (streams), services (RPC), and actions (goals)
+- Understand the publish-subscribe pattern and its advantages for distributed systems
+- Learn why ROS 2 is superior to ROS 1 for real-time and deterministic systems
+- Understand URDF (Unified Robot Description Format) and kinematic chains
+- Learn how to describe humanoid robot morphology in machine-readable format
 
-Controlling humanoid robots presents a unique set of challenges due to their high degrees of freedom, complex dynamics, and the inherent instability of bipedal locomotion. Unlike wheeled robots, humanoids must constantly maintain balance against gravity and external disturbances while executing diverse tasks such as walking, manipulating objects, and interacting with their environment. Effective control systems are thus foundational to achieving agile, robust, and human-like movements.
+### Practical Skills
 
-Traditional control approaches often involve model-based methods, where precise mathematical models of the robot's kinematics and dynamics are used to derive control laws. These methods, while powerful, can be sensitive to modeling inaccuracies and environmental uncertainties. Hybrid control strategies, integrating both model-based and model-free (e.g., reinforcement learning) techniques, are increasingly explored to combine the precision of analytical models with the adaptability of learning-based controllers.
+- Install and configure ROS 2 (Humble/Iron) on Ubuntu 22.04
+- Create ROS 2 packages with proper structure and dependencies
+- Write ROS 2 nodes in Python using rclpy
+- Create custom message and service definitions
+- Implement publish-subscribe communication between nodes
+- Implement request-response (service) communication
+- Use ROS 2 launch files to orchestrate multi-node systems
+- Use parameter servers and dynamic parameter reconfiguration
+- Parse and validate URDF files for humanoid robots
+- Visualize robot morphology using RViz
+- Debug ROS 2 systems using ros2 command-line tools
 
-Key control challenges include whole-body control, which coordinates all joints to achieve a desired end-effector trajectory or maintain balance; impedance control, for compliant interaction with the environment; and locomotion control, focusing on stable walking and dynamic maneuvers. The integration of advanced sensors providing proprioceptive feedback (joint angles, forces) and exteroceptive feedback (vision, touch) into robust control loops is crucial for humanoids to safely and effectively navigate and manipulate the physical world.
+### Capstone Relevance
 
-<!-- Mermaid diagrams and code examples (to be added in subsequent phases) -->
+- Students will use ROS 2 nodes to coordinate their capstone system
+- Perception pipeline (sensors → fusion) will run as ROS 2 nodes
+- Motion planning will be a ROS 2 service
+- Motor commands will be published as ROS 2 topics
 
+## Chapter Structure
+
+This chapter is organized into three modules:
+
+### Module 1: ROS 2 Architecture & Core Concepts (Weeks 3-4)
+
+Covers the fundamental building blocks of ROS 2: nodes, topics, services, actions, and parameters. You'll learn why distributed architectures matter and how ROS 2 solves the middleware problem in robotics.
+
+### Module 2: Practical ROS 2 Development (Weeks 4-5)
+
+Focuses on practical development skills: launch files, message definitions, debugging tools, URDF modeling, and visualization with RViz.
+
+### Module 3: Integration & Capstone Preparation (Week 5)
+
+Brings everything together with sensor drivers, motor controllers, and a comprehensive integration challenge that prepares you for the capstone project.
+
+## Prerequisites
+
+Before starting this chapter, you should have:
+
+- Completed Chapter 1 (Foundations of Physical AI)
+- Ubuntu 22.04 LTS installed (or accessible via VM)
+- Basic Python programming experience
+- Familiarity with command-line tools (Linux terminal)
+- Understanding of basic robotics concepts (sensors, actuators, control loops)
+
+## Technical Requirements
+
+### Software Stack
+
+- ROS 2 Humble or Iron (Ubuntu 22.04 LTS)
+- Python 3.10+
+- RViz (visualization)
+- rqt tools (debugging)
+- Visual Studio Code with ROS 2 extension (recommended)
+
+### Hardware
+
+- Linux PC with Ubuntu 22.04 (dual-boot or VM acceptable)
+- 4+ GB RAM minimum, 8+ GB recommended
+- 100 GB free disk space
+- No specialized hardware needed for Chapter 2 (simulation only)
+
+### External Dependencies
+
+- rclpy (Python ROS 2 client library)
+- std_msgs, geometry_msgs, sensor_msgs (standard message types)
+- tf2, tf2_ros (coordinate transformation library)
+- OpenCV (optional, for visualizations)
+
+## Reading Materials
+
+### Primary Resources
+
+- [ROS 2 Official Documentation](https://docs.ros.org/en/humble/)
+- [ROS 2 Design](https://design.ros2.org/)
+- [rclpy (Python Client Library)](https://docs.ros.org/en/humble/Concepts/Intermediate/About-ROS2-Client-Libraries.html)
+- [URDF Format Specification](http://wiki.ros.org/urdf/XML)
+
+### Secondary Resources
+
+- Real-Time Robotics: Time and Determinism - Research paper on ROS 2 real-time capabilities
+- Message Design in ROS: Best practices for custom messages
+- Robot Architecture: From Design to Deployment - Chapter on middleware
+
+### Reference Materials
+
+- ROS 2 Command Cheat Sheet
+- URDF Validator and Tools
+- rqt Tools User Guide
+
+## Common Mistakes to Avoid
+
+**Mistake:** Ignoring QoS settings. Result: Data loss or latency.  
+**Prevention:** Always specify QoS explicitly. Use 'reliable' for critical data (commands), 'best-effort' for high-frequency data (camera).
+
+**Mistake:** Creating monolithic nodes. Result: Debugging nightmare, poor reusability.  
+**Prevention:** Each node should have single responsibility. Separate perception, planning, control.
+
+**Mistake:** Not handling dynamic reconnection. Result: System hangs if a node crashes.  
+**Prevention:** Implement timeout handling, graceful degradation, lifecycle management.
+
+**Mistake:** URDF with incorrect inertia. Result: Physics simulation diverges from reality.  
+**Prevention:** Use actual CAD properties or estimate conservatively. Always validate in Gazebo.
+
+**Mistake:** Mixing real-time and non-real-time in same node. Result: Control jitter, motion instability.  
+**Prevention:** Keep control loop in separate, dedicated thread. Use timers for periodic tasks.
+
+**Mistake:** Assuming simulated time = real time. Result: Code works in sim, fails on real robot.  
+**Prevention:** Always be explicit about time. Use ros_time. Test timing on actual hardware.
+
+## Chapter Summary
+
+**Duration:** 3 weeks (Weeks 3-5)  
+**Modules:** 3  
+**Subsections:** 16  
+**Hands-on Projects:** 3  
+**Total Estimated Reading:** 120-150 pages  
+**Total Estimated Coding:** 30-40 hours
+
+### Key Takeaways
+
+- ROS 2 is a distributed middleware that enables complex robot software
+- Nodes communicate via topics (streaming), services (RPC), and actions (goals)
+- Proper system architecture is essential: separate perception, planning, control
+- URDF describes robot morphology; RViz visualizes it
+- Launch files orchestrate multi-node systems
+- Debugging tools (ros2 CLI, rqt) are essential for system integration
+- Real-time constraints must be respected: control loop frequency matters
+- Sim-to-real requires careful time management and sensor driver abstraction
+
+### Next Chapter Prerequisites
+
+By the end of Chapter 2, you should have:
+
+- Working ROS 2 installation
+- Ability to write, launch, and debug multi-node systems
+- Understanding of URDF and robot kinematics
+- Comfort with publish-subscribe and request-response patterns
+- Capstone system architecture designed in Chapter 2
+
+These skills form the foundation for Chapter 3, where you'll integrate perception, planning, and advanced control systems.
